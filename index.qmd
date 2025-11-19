@@ -397,23 +397,23 @@ ax.set_xlabel('Initial Patient Severity', fontsize=12, fontweight='bold')
 ax.set_ylabel('Post-Surgical Symptom Score (Lower is Better)', fontsize=12, fontweight='bold')
 ax.set_title('Post-Surgical Symptom Score by Patient Severity', fontsize=14, fontweight='bold', pad=15)
 ax.grid(True, alpha=0.3, linestyle='-', linewidth=0.5)
+ax.legend(loc='upper right', fontsize=11, framealpha=0.9)
 
-# Get x-axis limits after setting up the plot
+# Get x-axis limits after all plotting and styling is complete
+plt.tight_layout()
 xlim = ax.get_xlim()
 x_max = xlim[1]
 
-# Add text annotations for means
-ax.text(x_max * 0.95, dreamy_mean, f'○ {dreamy_mean:.2f}', 
+# Add text annotations for means positioned on the right side of the graph
+ax.text(x_max * 0.98, dreamy_mean, f'○ {dreamy_mean:.2f}', 
         color='#4E79A7', fontsize=11, fontweight='bold', 
         verticalalignment='center', horizontalalignment='right', 
         bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.8), zorder=4)
-ax.text(x_max * 0.95, duck_mean, f'△ {duck_mean:.2f}', 
+ax.text(x_max * 0.98, duck_mean, f'△ {duck_mean:.2f}', 
         color='#E15759', fontsize=11, fontweight='bold', 
         verticalalignment='center', horizontalalignment='right',
         bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.8), zorder=4)
-ax.legend(loc='upper right', fontsize=11, framealpha=0.9)
 
-plt.tight_layout()
 plt.show()
 ```
 
